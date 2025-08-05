@@ -41,7 +41,7 @@ $$\alpha_{k} := \mathbb{E} (X^{k}) = \int_{-\infty}^{\infty} x^{k} f(x)\ \mathrm
 <link rel="canonical" href="https://zheldchqh.github.io/math/clt/">
 <link rel="stylesheet" href="/book.min.2c3a77e21b8dd178bf7ee92bb55476c380e1a9451150525c84e44a594988be4a.css" integrity="sha256-LDp34huN0Xi/fukrtVR2w4DhqUURUFJchORKWUmIvko=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.911cad0be1be542430c3a3bbfbe4dce3e8b11f46ddcde0b9538ed41909e4fee2.js" integrity="sha256-kRytC&#43;G&#43;VCQww6O7&#43;&#43;Tc4&#43;ixH0bdzeC5U47UGQnk/uI=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.a5daba467f619f537d0998aeb32b02093ed080f6ca93ec6b9238d269f0474c79.js" integrity="sha256-pdq6Rn9hn1N9CZiusysCCT7QgPbKk&#43;xrkjjSafBHTHk=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -307,7 +307,7 @@ $$\xi_{n} = \dfrac{\displaystyle \sum_{i = 1}^{n} (X_{i} - \mu)}{\sqrt{n} \sigma
   <div class="proof-content">
     가독성을 위하여 이 문단에서는 $M_{X} (t) =: M \left[ X \right] (t)$와 같이 표기한다.<br>
 표준화한 표본평균의 mgf는 다음과 같이 구할 수 있다.
-$$\begin{aligned} M \left[ \dfrac{\overline{X} - \mu}{\dfrac{\sigma}{\sqrt{n}}} \right] (t) &amp;= M \left[ \dfrac{\displaystyle \sum_{i = 1}^{n} X_{i} - n \mu}{\sqrt{n} \sigma} \right] (t) \\ &amp;= M \left[ \sum _{i = 1}^{n} \dfrac{X_{i} - \mu}{\sqrt{n} \sigma} \right] (t) \\ &amp;= \prod_{i = 1}^{n} M \left[ \dfrac{X_{i} - \mu}{\sqrt{n} \sigma} \right] (t) \\ &amp;= \prod_{i = 1}^{n} \mathbb{E} \left[ \exp \left[ \dfrac{(X - \mu) t}{\sqrt{n} \sigma} \right] \right] \\ &amp;= \left[ \mathbb{E} \left[ \dfrac{(X - \mu) t}{\sqrt{n} \sigma} \right] \right]^{n} \\ &amp;= \left[ M \left[ \dfrac{X - \mu}{\sigma} \right] \left( \dfrac{t}{\sqrt{n}} \right) \right]^{n} \end{aligned}$$
+$$\begin{aligned} M \left[ \dfrac{\overline{X} - \mu}{\dfrac{\sigma}{\sqrt{n}}} \right] (t) &amp;= M \left[ \dfrac{\displaystyle \sum_{i = 1}^{n} X_{i} - n \mu}{\sqrt{n} \sigma} \right] (t) \\ &amp;= M \left[ \sum _{i = 1}^{n} \dfrac{X_{i} - \mu}{\sqrt{n} \sigma} \right] (t) \\ &amp;= \prod_{i = 1}^{n} M \left[ \dfrac{X_{i} - \mu}{\sqrt{n} \sigma} \right] (t) \\ &amp;= \prod_{i = 1}^{n} \mathbb{E} \left[ \exp \left[ \dfrac{(X_{i} - \mu) t}{\sqrt{n} \sigma} \right] \right] \\ &amp;= \left[ \mathbb{E} \left[ \dfrac{(X - \mu) t}{\sqrt{n} \sigma} \right] \right]^{n} \\ &amp;= \left[ M \left[ \dfrac{X - \mu}{\sigma} \right] \left( \dfrac{t}{\sqrt{n}} \right) \right]^{n} \end{aligned}$$
 이때 $n \to \infty$이면 부정형이므로 양변에 자연로그를 취하고 $n \to \infty$를 취하면
 $$\lim_{n \to \infty} \ln \left[ \dfrac{X - \mu}{\sigma} \left( \dfrac{t}{\sqrt{n}} \right) \right]^{n} = \lim _{n \to \infty} n \ln M \left[ \dfrac{X - \mu}{\sigma} \left( \dfrac{t}{\sqrt{n}} \right) \right]$$
 $s = \dfrac{1}{\sqrt{n}}$로 치환하면
