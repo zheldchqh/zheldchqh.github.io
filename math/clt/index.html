@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="살다 보면 중심극한정리를 증명해보고 싶은 때가 찾아올 것이다. 그때를 대비해서 내가 증명하는 방법을 알려주도록 하겠다.
+참고로 이 글에서 모든 확률변수는 연속확률변수를 상정할 것이다.
+
+  정의 1. 적률
+  #
+
+확률변수 $X$의 평균의 정의식을 일반화하여 임의의 positive integer $k$에 대하여
+$$\alpha_{k} := \mathbb{E} (X^{k})$$
+를 원점에 대한 $\boldsymbol{k}$차 적률(moment)이라고 한다.
+또 분산의 정의식을 일반화하여 임의의 positive integer $k$에 대하여
+$$\mu_{k} := \mathbb{E} (X - \mu)^{k}$$
+를 평균에 대한 $\boldsymbol{k}$차 적률이라고 한다. 참고로 보통 그냥 $\mathbb{E} (X^{k})$를 $k$차 적률이라고 한다.
+
+
+  정의(원점에 대한 $\boldsymbol{k}$차 적률)
+  연속확률변수 $X$에 대하여 원점에 대한 $\boldsymbol{k}$차 적률 $\boldsymbol{\alpha_{k}}$를 다음과 같이 정의한다. $f(x)$는 $X$의 확률밀도함수이다.
+$$\alpha_{k} := \mathbb{E} (X^{k}) = \int_{-\infty}^{\infty} x^{k} f(x)\ \mathrm dx$$
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://zheldchqh.github.io/math/clt/">
+  <meta property="og:site_name" content="말하는감자의 이것저것">
+  <meta property="og:title" content="중심극한정리 개쉽게 증명하는법(아님)">
+  <meta property="og:description" content="살다 보면 중심극한정리를 증명해보고 싶은 때가 찾아올 것이다. 그때를 대비해서 내가 증명하는 방법을 알려주도록 하겠다.
+참고로 이 글에서 모든 확률변수는 연속확률변수를 상정할 것이다.
+정의 1. 적률#확률변수 $X$의 평균의 정의식을 일반화하여 임의의 positive integer $k$에 대하여 $$\alpha_{k} := \mathbb{E} (X^{k})$$ 를 원점에 대한 $\boldsymbol{k}$차 적률(moment)이라고 한다. 또 분산의 정의식을 일반화하여 임의의 positive integer $k$에 대하여 $$\mu_{k} := \mathbb{E} (X - \mu)^{k}$$ 를 평균에 대한 $\boldsymbol{k}$차 적률이라고 한다. 참고로 보통 그냥 $\mathbb{E} (X^{k})$를 $k$차 적률이라고 한다. 정의(원점에 대한 $\boldsymbol{k}$차 적률)연속확률변수 $X$에 대하여 원점에 대한 $\boldsymbol{k}$차 적률 $\boldsymbol{\alpha_{k}}$를 다음과 같이 정의한다. $f(x)$는 $X$의 확률밀도함수이다.
+$$\alpha_{k} := \mathbb{E} (X^{k}) = \int_{-\infty}^{\infty} x^{k} f(x)\ \mathrm dx$$">
+  <meta property="og:locale" content="ko">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="math">
+    <meta property="article:published_time" content="2025-07-10T12:00:00+09:00">
+    <meta property="article:modified_time" content="2025-07-10T12:00:00+09:00">
+<title>중심극한정리 개쉽게 증명하는법(아님) | 말하는감자의 이것저것</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://zheldchqh.github.io/math/clt/">
+<link rel="stylesheet" href="/book.min.2c3a77e21b8dd178bf7ee92bb55476c380e1a9451150525c84e44a594988be4a.css" integrity="sha256-LDp34huN0Xi/fukrtVR2w4DhqUURUFJchORKWUmIvko=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.39deead6e4c6e1364af9d9e11cb9ead81db59ef671dc51e9731295e73f0a8cb8.js" integrity="sha256-Od7q1uTG4TZK&#43;dnhHLnq2B21nvZx3FHpcxKV5z8KjLg=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+  <link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+<style>
+.katex {
+    font-size: 109%;
+}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>말하는감자의 이것저것</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>중심극한정리 개쉽게 증명하는법(아님)</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#정의-1-적률">정의 1. 적률</a></li>
+    <li><a href="#정의-2-적률생성함수">정의 2. 적률생성함수</a></li>
+    <li><a href="#보조정리-3-로피탈의-정리">보조정리 3. 로피탈의 정리</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown book-post">
+  <div style="margin-top: 2em;">
+    <h1>
+      중심극한정리 개쉽게 증명하는법(아님)
+    </h1>
+    
+  <div class="flex align-center text-small book-post-date">
+    <i class="fa-solid fa-calendar-days" style="color: #888;"></i>&nbsp;
+    <span style="color: #888;">July 10, 2025</span>
+  </div>
+
+
+
+  
+
+  
+
+
+    <hr>
+    <div class="book-post-content"><p>살다 보면 중심극한정리를 증명해보고 싶은 때가 찾아올 것이다. 그때를 대비해서 내가 증명하는 방법을 알려주도록 하겠다.<br>
+참고로 이 글에서 모든 확률변수는 연속확률변수를 상정할 것이다.</p>
+<h2 id="정의-1-적률">
+  정의 1. 적률
+  <a class="anchor" href="#%ec%a0%95%ec%9d%98-1-%ec%a0%81%eb%a5%a0">#</a>
+</h2>
+<p>확률변수 $X$의 평균의 정의식을 일반화하여 임의의 positive integer $k$에 대하여
+$$\alpha_{k} := \mathbb{E} (X^{k})$$
+를 <b>원점에 대한 $\boldsymbol{k}$차 적률</b>(moment)이라고 한다.
+또 분산의 정의식을 일반화하여 임의의 positive integer $k$에 대하여
+$$\mu_{k} := \mathbb{E} (X - \mu)^{k}$$
+를 <b>평균에 대한 $\boldsymbol{k}$차 적률</b>이라고 한다. 참고로 보통 그냥 $\mathbb{E} (X^{k})$를 $k$차 적률이라고 한다.
+
+<div class="math-box definition-box">
+  <div class="box-title">정의(원점에 대한 $\boldsymbol{k}$차 적률)</div>
+  <div class="box-body">연속확률변수 $X$에 대하여 <b>원점에 대한 $\boldsymbol{k}$차 적률 $\boldsymbol{\alpha_{k}}$</b>를 다음과 같이 정의한다. $f(x)$는 $X$의 확률밀도함수이다.<br>
+$$\alpha_{k} := \mathbb{E} (X^{k}) = \int_{-\infty}^{\infty} x^{k} f(x)\ \mathrm dx$$</div>
+</div></p>
+
+<div class="math-box definition-box">
+  <div class="box-title">정의(평균에 대한 $\boldsymbol{k}$차 적률)</div>
+  <div class="box-body">연속확률변수 $X$에 대하여 <b>평균에 대한 $\boldsymbol{k}$차 적률 $\boldsymbol{\mu_{k}}$</b>를 다음과 같이 정의한다. $f(x)$는 $X$의 확률밀도함수이다.<br>
+$$\mu_{k} := \mathbb{E} [(X - \mu)^{k}] = \int_{-\infty}^{\infty} (x - \mu)^{k} f(x)\ \mathrm dx$$</div>
+</div>
+<h2 id="정의-2-적률생성함수">
+  정의 2. 적률생성함수
+  <a class="anchor" href="#%ec%a0%95%ec%9d%98-2-%ec%a0%81%eb%a5%a0%ec%83%9d%ec%84%b1%ed%95%a8%ec%88%98">#</a>
+</h2>
+<p>연속확률변수 $X$에 대하여 다음 적분이 존재한다면 그 함수 $M_{X} (t)$를 <b>적률생성함수</b>(moment generating function, mgf)라고 한다. $f(x)$는 $X$의 확률밀도함수이다.
+$$M_{X} (t) = \mathbb{E} [\exp (tX)] = \int_{-\infty}^{\infty} \exp (tx) f(x)\ \mathrm dx$$
+
+<div class="math-box definition-box">
+  <div class="box-title">정의(적률생성함수)</div>
+  <div class="box-body">연속확률변수 $X$의 적률생성함수는 다음과 같다. $f(x)$는 $X$의 확률밀도함수이다. $\exp (tx) f(x)$는 $\mathbb{R}$에서 적분가능하다.
+$$M_{X} (t) = \mathbb{E} [\exp (tX)] = \int_{-\infty}^{\infty} \exp (tx) f(x)\ \mathrm dx$$</div>
+</div>
+이때 눈치가 빠른 사람들은 $M_{X} (-t)$가 $f(x)$의 bilateral Laplace transform이라는 사실을 눈치챌 것이다. 축하한다.<br>
+여기서 $\exp (tx)$의 Maclaurin expansion이
+$$\exp (tx) = \sum_{n = 0}^{\infty} \dfrac{(tx)^n}{n!}$$
+이므로 $M_{X} (t)$는
+$$\begin{aligned} M_{X} (t) &amp;= \mathbb{E} [\exp (tX)] \\ &amp;= \sum_{n = 0}^{\infty} \dfrac{t^n}{n!} \mathbb{E} (X^{k}) \end{aligned}$$
+여기서 $M_{X} (t)$를 $t$로 $1$번 미분하면
+$$\dfrac{\partial}{\partial t} M_{X} (t) = \mathbb{E} [X \exp (tX)]$$
+임을 알 수 있는데 여기서 $t = 0$에서 이상이 정의된다고 가정하고 대입하면
+$$\left. \dfrac{\partial}{\partial t} M_{X} (t) \right|_{t = 0} = \mathbb{E} (X)$$
+가 된다. 마찬가지로 $2$번 미분하고 $t = 0$을 대입하면 $\mathbb{E} (X^2)$이 나온다. 이렇게 mgf를 $n$번 미분하고 $t = 0$을 대입하면
+$$M_{X} ^{n} (0) = \mathbb{E} (X^n)$$
+가 되는데 이런 이유에서 얘가 적률생성함수라고 불리는 거다.<br>
+또한 서로 독립이고 mgf가 존재하는 두 확률변수 $X$와 $Y$에 대하여 $M_{X + Y} (t) = M_{X} (t) M_{Y} (t)$인데 이건 연습문제로 남겨두겠다.<br>
+이쯤에서 보조정리 하나를 소개한다.
+
+<div class="math-box lemma-box">
+  <div class="box-title">보조정리(확률밀도함수가 같을 조건)</div>
+  <div class="box-body">$t = 0$을 포함하는 적당한 열린구간에서 mgf가 존재하는 두 연속확률변수 $X$와 $Y$에 대하여 둘의 mgf가 같으면 둘의 확률밀도함수도 같다. 즉
+$$M_{X} (t) = M_{Y} (t) \Rightarrow f_{X} (x) = f_{Y} (x)$$
+이다.</div>
+</div>
+
+<div class="proof">
+  <div class="proof-title">증명</div>
+  <div class="proof-content">
+    $M_{X} (-t)$는 $f(x)$의 bilateral Laplace transform이므로 상정한 조건으로부터
+$$\mathcal{L} \left\{ f_{X} \right\} (-t) = \mathcal{L} \left\{ f_{Y} \right\} (-t)$$
+를 얻는다. 이때 Laplace transform의 uniqueness에 의하여 주어진 두 함수 $f_{X} (x)$와 $f_{Y} (x)$는 같다.
+    <div class="qed">■</div>
+  </div>
+</div>
+근데 이런 의문이 들거다. 걍 적분식에서 우변을 좌변으로 넘겨보면
+$$\int_{-\infty}^{\infty} \exp (tx) (f_{X} (x) - f_{Y} (x))\ \mathrm dx = 0$$
+인데 그럼 걍 $f_{X} (x) - f_{Y} = 0$이어야 하는 거 아닐까? 우선 그건 $f_{X} (x)$와 $f_{Y} (x)$가 둘 다 확률밀도함수로서 $f_{X} (x) \geq 0$이고 $f_{Y} (x) \geq 0$이라서 가능한 소리다. 일반적인 함수라면 뭐 예를 들어서 $f_{X} (x) - f_{Y} (x)$라는 함수가 지수적으로 잘 감소해서 둘이 쿵짝이 잘 맞아서 $f_{X} (x) - f_{Y} (x) \neq 0$이면서 적분값은 $0$으로 만들 수도 있을 수도 있다. 그냥 저게 엄밀해보이니까 받아들이자.<br>
+정규분포의 mgf를 직접 구해보자.
+<div class="proof">
+  <div class="proof-title">풀이</div>
+  <div class="proof-content">
+    연속확률변수 $X$가 $\mathcal{N} (\mu,\ \sigma^2)$를 따를 때, $X$의 확률밀도함수 $f(x)$는
+$$f(x) = \dfrac{1}{\sqrt{2 \pi} \sigma} \exp \left[ - \dfrac{(x - \mu)^2}{2 \sigma^2} \right]$$
+이므로 $X$의 mgf $M_{X} (t)$는
+$$\begin{aligned} M_{X} (t) &amp;= \dfrac{1}{\sqrt{2 \pi} \sigma} \int_{-\infty}^{\infty} \exp (tx) \exp \left[ - \dfrac{(x - \mu)^2}{2 \sigma^2} \right]\ \mathrm dx \\ &amp;= \dfrac{1}{\sqrt{2 \pi} \sigma} \int_{-\infty}^{\infty} \exp \left[ - \dfrac{x^2 - 2 (\mu + t \sigma^2 ) x + (\mu + t \sigma^2 )^2 - (\mu + t \sigma^2 )^2 + \mu^2}{2 \sigma^2} \right]\ \mathrm dx \\ &amp;= \exp \left[ \dfrac{(\mu + t \sigma^2 )^2 - \mu^2}{2 \sigma^2} \right] \int_{-\infty}^{\infty} \dfrac{1}{\sqrt{2 \pi} \sigma} \exp \left[ - \dfrac{(x - \mu - t \sigma^2 )^2}{2 \sigma^2} \right]\ \mathrm dx \\ &amp;= \exp \left( t \mu + \dfrac{t^2 \sigma^2}{2} \right) \int_{-\infty}^{\infty} \dfrac{1}{\sqrt{2 \pi} \sigma} \exp \left[ - \dfrac{(x - \mu)^2}{2 \sigma^2} \right]\ \mathrm dx \\ &amp;= \exp \left( t \mu + \dfrac{t^2 \sigma^2}{2} \right) \end{aligned}$$
+임을 알 수 있다.
+    <div class="qed">■</div>
+  </div>
+</div></p>
+<h2 id="보조정리-3-로피탈의-정리">
+  보조정리 3. 로피탈의 정리
+  <a class="anchor" href="#%eb%b3%b4%ec%a1%b0%ec%a0%95%eb%a6%ac-3-%eb%a1%9c%ed%94%bc%ed%83%88%ec%9d%98-%ec%a0%95%eb%a6%ac">#</a>
+</h2>
+<p>아마 극한에 빠삭하거나 대치동 어둠의 스킬을 들어본 사람은 알 만한 정리이다. 하지만 정작 이걸 어떤 상황에서 써먹는지는 모르고 일단 $0$분의 $0$ 꼴 극한만 나오면 아무 생각 없이 미분때리고 보는 <i>허수</i>들도 적지 않다. 이번 기회에 로피탈의 정리를 마스터하여 보자.
+확률변수 $X$가 정규분포를 따르는지의 여부와 무관하게 로피탈의 정리가 성립함을 증명하기 위해서는 로피탈의 정리가 무엇인지 알아볼 필요가 있다. 로피탈의 정리는 다음과 같다.
+
+<div class="math-box lemma-box">
+  <div class="box-title">보조정리(로피탈의 정리)</div>
+  <div class="box-body"><p>열린구간 $I = (\alpha,\ \beta)$와 실수 $c \in I$, 두 함수 $f,\ g : I - \left\{ c \right\} \to \mathbb{R}$에 대하여</p>
+<ul>
+<li>$f$와 $g$가 $I - \left\{ c \right\}$에서 미분가능하고</li>
+<li>$\displaystyle \lim_{x \to c} f(x) = \lim_{x \to c} g(x) = 0$이고</li>
+<li>$\displaystyle \lim_{x \to c} \dfrac{f'(x)}{g'(x)}$가 존재하면
+$$\lim_{x \to c} \dfrac{f(x)}{g(x)} = \lim_{x \to c} \dfrac{f'(x)}{g'(x)}$$
+이다.</li>
+</ul></div>
+</div>
+
+<div class="proof">
+  <div class="proof-title">증명</div>
+  <div class="proof-content">
+    두 함수의 $x \to c$에서의 극한이 $0$이라고 상정했으므로 $f(c) = g(c) = 0$이라고 정의하고 코시의 평균값 정리를 활용하여 증명할 수 있다.
+    <div class="qed">■</div>
+  </div>
+</div></p>
+<h1 id="정리-4-중심극한정리">
+  정리 4. 중심극한정리
+  <a class="anchor" href="#%ec%a0%95%eb%a6%ac-4-%ec%a4%91%ec%8b%ac%ea%b7%b9%ed%95%9c%ec%a0%95%eb%a6%ac">#</a>
+</h1>
+<p>중심극한정리의 엄밀한 정의?는 다음과 같다.
+
+<div class="math-box theorem-box">
+  <div class="box-title">정리(중심극한정리)</div>
+  <div class="box-body">평균이 $\mu$이고 분산이 $\sigma^2$인 독립항등분포(iid)를 따르는 확률변수 $X_1$, $X_2$, $X_3$, $\cdots$, $X_n$에 대하여 확률변수
+$$\xi_{n} = \dfrac{\displaystyle \sum_{i = 1}^{n} (X_{i} - \mu)}{\sqrt{n} \sigma} = \dfrac{\overline{X} - \mu}{\dfrac{\sigma}{\sqrt{n}}}$$
+는 $\mathcal{N} (0,\ 1)$로 분포수렴한다. $\overline{X}$는 $X_{i}$의 평균이다.</div>
+</div>
+
+<div class="proof">
+  <div class="proof-title">증명</div>
+  <div class="proof-content">
+    가독성을 위하여 이 문단에서는 $M_{X} (t) =: M \left[ X \right] (t)$와 같이 표기한다.<br>
+표준화한 표본평균의 mgf는 다음과 같이 구할 수 있다.
+$$\begin{aligned} M \left[ \dfrac{\overline{X} - \mu}{\dfrac{\sigma}{\sqrt{n}}} \right] (t) &amp;= M \left[ \dfrac{\displaystyle \sum_{i = 1}^{n} X_{i} - n \mu}{\sqrt{n} \sigma} \right] (t) \\ &amp;= M \left[ \sum _{i = 1}^{n} \dfrac{X_{i} - \mu}{\sqrt{n} \sigma} \right] (t) \\ &amp;= \prod_{i = 1}^{n} M \left[ \dfrac{X_{i} - \mu}{\sqrt{n} \sigma} \right] (t) \\ &amp;= \prod_{i = 1}^{n} \mathbb{E} \left[ \exp \left[ \dfrac{(X - \mu) t}{\sqrt{n} \sigma} \right] \right] \\ &amp;= \left[ \mathbb{E} \left[ \dfrac{(X - \mu) t}{\sqrt{n} \sigma} \right] \right]^{n} \\ &amp;= \left[ M \left[ \dfrac{X - \mu}{\sigma} \right] \left( \dfrac{t}{\sqrt{n}} \right) \right]^{n} \end{aligned}$$
+이때 $n \to \infty$이면 부정형이므로 양변에 자연로그를 취하고 $n \to \infty$를 취하면
+$$\lim_{n \to \infty} \ln \left[ \dfrac{X - \mu}{\sigma} \left( \dfrac{t}{\sqrt{n}} \right) \right]^{n} = \lim _{n \to \infty} n \ln M \left[ \dfrac{X - \mu}{\sigma} \left( \dfrac{t}{\sqrt{n}} \right) \right]$$
+$s = \dfrac{1}{\sqrt{n}}$로 치환하면
+$$\begin{aligned} \lim_{n \to \infty} n \ln M \left[ \dfrac{X - \mu}{\sigma} \left( \dfrac{t}{\sqrt{n}} \right) \right] &amp;= \lim_{s \to 0} \dfrac{\ln M \left[ \dfrac{X - \mu}{\sigma} \right] (st)}{s^2} \\ &amp;= \lim_{s \to 0} \dfrac{\dfrac{tM \left[ \dfrac{X - \mu}{\sigma} \right]' (st)}{M \left[ \dfrac{X - \mu}{\sigma} \right] (st)}}{2s} \qquad &amp; \text{By L'Hôpital's Rule} \\ &amp;= \dfrac{t}{2} \lim_{s \to 0} \dfrac{M \left[ \dfrac{X - \mu}{\sigma} \right]' (st)}{s} &amp; \because\ M(0) = 1 \\ &amp;= \dfrac{t^2}{2} \lim_{s \to 0} M \left[ \dfrac{X - \mu}{\sigma} \right]'' (st) &amp; \text{By L'Hôpital's Rule} \\ &amp;= \dfrac{t^2}{2} M \left[ \dfrac{X - \mu}{\sigma} \right]'' (0) \\ &amp;= \dfrac{t^2}{2} \end{aligned}$$
+좌변은 $n \to \infty$일 때 표준화한 표본평균의 mgf에 자연로그를 취한 것이므로
+$$\lim_{n \to \infty} \ln M \left[ \dfrac{\overline{X} - \mu}{\dfrac{\sigma}{\sqrt{n}}} \right] (t) = \dfrac{t^2}{2}$$
+양변에서 자연로그를 제거하면
+$$\lim_{n \to \infty} M \left[ \dfrac{\overline{X} - \mu}{\dfrac{\sigma}{\sqrt{n}}} \right] (t) = \exp \left( \dfrac{t^2}{2} \right)$$
+이때 $\exp \left( \dfrac{t^2}{2} \right)$는 표준정규분포의 mgf이므로 확률변수 $\dfrac{\overline{X} - \mu}{\dfrac{\sigma}{\sqrt{n}}}$는 $n \to \infty$에서 표준정규분포로 분포수렴한다.
+    <div class="qed">■</div>
+  </div>
+</div>
+이를 다시 쓰면 이렇게 볼 수도 있다.
+
+<div class="math-box corollary-box">
+  <div class="box-title">따름정리</div>
+  <div class="box-body">평균이 $\mu$이고 분산이 $\sigma^2$인 독립항등분포(iid)를 따르는 확률변수 $X_1$, $X_2$, $X_3$, $\cdots$, $X_n$에 대하여 표본의 크기 $n$이 충분히 클 때 표본평균 $\overline{X}$는 근사적으로 $\mathcal{N} \left( \mu,\ \dfrac{\sigma^2}{n} \right)$를 따른다.</div>
+</div>
+
+<div class="proof">
+  <div class="proof-title">증명</div>
+  <div class="proof-content">
+    표준화한 표본평균이 표준정규분포를 따르므로 표준화하지 않은 표본평균은 $\mathcal{N} \left( \mu,\ \dfrac{\sigma^2}{n} \right)$를 따름은 자명하다.
+    <div class="qed">■</div>
+  </div>
+</div></p>
+</div>
+  </div>
+
+</article>
+ 
+      
+
+      
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+      <footer class="footer">
+  <div class="footer-container">
+    <p>&copy; 2025 말하는감자. 모든 권리 보유.</p>
+    <p>Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/alex-shpak/hugo-book">Hugo Book</a></p>
+  </div>
+</footer>
+      
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#정의-1-적률">정의 1. 적률</a></li>
+    <li><a href="#정의-2-적률생성함수">정의 2. 적률생성함수</a></li>
+    <li><a href="#보조정리-3-로피탈의-정리">보조정리 3. 로피탈의 정리</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

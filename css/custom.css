@@ -1,0 +1,80 @@
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.math-box {
+  border: 1px solid #000;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+}
+
+.box-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.box-body p {
+  margin: 0;
+}
+
+.definition-box {
+  border-left: 5px solid #28a745 !important;
+}
+
+.theorem-box {
+  border-left: 5px solid #007bff !important;
+}
+
+.lemma-box {
+  border-left: 5px solid #ccc !important;
+}
+
+.proof {
+  display: table;
+  width: 100%;
+  margin: 1.5em 0;
+}
+
+.proof-title {
+  display: table-cell;
+  font-weight: bold;
+  padding-right: 1rem;
+  white-space: nowrap;
+}
+
+.proof-content {
+  display: table-cell;
+}
+
+.qed {
+  text-align: right;
+}
+
+.corollary-box {
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-left: 0.25rem solid #e83e8c;
+}
+
+blockquote {
+  border-left: 5px solid #ccc !important;
+  padding: auto !important;
+  margin: auto !important;
+  background-color: #f8f8f8 !important;
+}
+
+hr {
+  margin: 1rem 0;
+}
+
+footer {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.exercise-box {
+  border-left: 5px solid #ffc107 !important;
+}

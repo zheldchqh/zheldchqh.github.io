@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maths on 말하는감자의 이것저것</title>
+    <link>https://zheldchqh.github.io/math/</link>
+    <description>Recent content in Maths on 말하는감자의 이것저것</description>
+    <generator>Hugo</generator>
+    <language>ko</language>
+    <lastBuildDate>Thu, 10 Jul 2025 12:00:00 +0900</lastBuildDate>
+    <atom:link href="https://zheldchqh.github.io/math/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>중심극한정리 개쉽게 증명하는법(아님)</title>
+      <link>https://zheldchqh.github.io/math/clt/</link>
+      <pubDate>Thu, 10 Jul 2025 12:00:00 +0900</pubDate>
+      <guid>https://zheldchqh.github.io/math/clt/</guid>
+      <description>&lt;p&gt;살다 보면 중심극한정리를 증명해보고 싶은 때가 찾아올 것이다. 그때를 대비해서 내가 증명하는 방법을 알려주도록 하겠다.&lt;br&gt;&#xA;참고로 이 글에서 모든 확률변수는 연속확률변수를 상정할 것이다.&lt;/p&gt;&#xA;&lt;h2 id=&#34;정의-1-적률&#34;&gt;&#xD;&#xA;  정의 1. 적률&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#%ec%a0%95%ec%9d%98-1-%ec%a0%81%eb%a5%a0&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;확률변수 $X$의 평균의 정의식을 일반화하여 임의의 positive integer $k$에 대하여&#xA;$$\alpha_{k} := \mathbb{E} (X^{k})$$&#xA;를 &lt;b&gt;원점에 대한 $\boldsymbol{k}$차 적률&lt;/b&gt;(moment)이라고 한다.&#xA;또 분산의 정의식을 일반화하여 임의의 positive integer $k$에 대하여&#xA;$$\mu_{k} := \mathbb{E} (X - \mu)^{k}$$&#xA;를 &lt;b&gt;평균에 대한 $\boldsymbol{k}$차 적률&lt;/b&gt;이라고 한다. 참고로 보통 그냥 $\mathbb{E} (X^{k})$를 $k$차 적률이라고 한다.&#xA;&#xD;&#xA;&lt;div class=&#34;math-box definition-box&#34;&gt;&#xD;&#xA;  &lt;div class=&#34;box-title&#34;&gt;정의(원점에 대한 $\boldsymbol{k}$차 적률)&lt;/div&gt;&#xD;&#xA;  &lt;div class=&#34;box-body&#34;&gt;연속확률변수 $X$에 대하여 &lt;b&gt;원점에 대한 $\boldsymbol{k}$차 적률 $\boldsymbol{\alpha_{k}}$&lt;/b&gt;를 다음과 같이 정의한다. $f(x)$는 $X$의 확률밀도함수이다.&lt;br&gt;&#xA;$$\alpha_{k} := \mathbb{E} (X^{k}) = \int_{-\infty}^{\infty} x^{k} f(x)\ \mathrm dx$$&lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

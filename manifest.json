@@ -1,0 +1,15 @@
+{
+  "name": "말하는감자의 이것저것",
+  "short_name": "말하는감자의 이것저것",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "512x512"
+    }
+  ]
+}

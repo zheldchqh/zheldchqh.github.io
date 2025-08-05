@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>홈 on 말하는감자의 이것저것</title>
+    <link>https://zheldchqh.github.io/</link>
+    <description>Recent content in 홈 on 말하는감자의 이것저것</description>
+    <generator>Hugo</generator>
+    <language>ko</language>
+    <lastBuildDate>Thu, 10 Jul 2025 12:00:00 +0900</lastBuildDate>
+    <atom:link href="https://zheldchqh.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>중심극한정리 개쉽게 증명하는법(아님)</title>
+      <link>https://zheldchqh.github.io/math/clt/</link>
+      <pubDate>Thu, 10 Jul 2025 12:00:00 +0900</pubDate>
+      <guid>https://zheldchqh.github.io/math/clt/</guid>
+      <description>&lt;p&gt;살다 보면 중심극한정리를 증명해보고 싶은 때가 찾아올 것이다. 그때를 대비해서 내가 증명하는 방법을 알려주도록 하겠다.&lt;br&gt;&#xA;참고로 이 글에서 모든 확률변수는 연속확률변수를 상정할 것이다.&lt;/p&gt;&#xA;&lt;h2 id=&#34;정의-1-적률&#34;&gt;&#xD;&#xA;  정의 1. 적률&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#%ec%a0%95%ec%9d%98-1-%ec%a0%81%eb%a5%a0&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;확률변수 $X$의 평균의 정의식을 일반화하여 임의의 positive integer $k$에 대하여&#xA;$$\alpha_{k} := \mathbb{E} (X^{k})$$&#xA;를 &lt;b&gt;원점에 대한 $\boldsymbol{k}$차 적률&lt;/b&gt;(moment)이라고 한다.&#xA;또 분산의 정의식을 일반화하여 임의의 positive integer $k$에 대하여&#xA;$$\mu_{k} := \mathbb{E} (X - \mu)^{k}$$&#xA;를 &lt;b&gt;평균에 대한 $\boldsymbol{k}$차 적률&lt;/b&gt;이라고 한다. 참고로 보통 그냥 $\mathbb{E} (X^{k})$를 $k$차 적률이라고 한다.&#xA;&#xD;&#xA;&lt;div class=&#34;math-box definition-box&#34;&gt;&#xD;&#xA;  &lt;div class=&#34;box-title&#34;&gt;정의(원점에 대한 $\boldsymbol{k}$차 적률)&lt;/div&gt;&#xD;&#xA;  &lt;div class=&#34;box-body&#34;&gt;연속확률변수 $X$에 대하여 &lt;b&gt;원점에 대한 $\boldsymbol{k}$차 적률 $\boldsymbol{\alpha_{k}}$&lt;/b&gt;를 다음과 같이 정의한다. $f(x)$는 $X$의 확률밀도함수이다.&lt;br&gt;&#xA;$$\alpha_{k} := \mathbb{E} (X^{k}) = \int_{-\infty}^{\infty} x^{k} f(x)\ \mathrm dx$$&lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>소개</title>
+      <link>https://zheldchqh.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zheldchqh.github.io/about/</guid>
+      <description>&lt;h1 id=&#34;-블로그-소개&#34;&gt;&#xD;&#xA;  👋 블로그 소개&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#-%eb%b8%94%eb%a1%9c%ea%b7%b8-%ec%86%8c%ea%b0%9c&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;이 블로그는 제가 공부하면서 정리한 &lt;strong&gt;수학&lt;/strong&gt;과 &lt;strong&gt;과학&lt;/strong&gt; 지식을&lt;br&gt;&#xA;더 많은 사람들과 &lt;strong&gt;쉽고 직관적으로 공유&lt;/strong&gt;하기 위해 만들었습니다.&lt;/p&gt;&#xA;&lt;p&gt;복잡하게 느껴지는 개념도, 누구나 이해할 수 있도록&lt;br&gt;&#xA;&lt;strong&gt;예제 중심의 설명과 시각화&lt;/strong&gt;를 활용해 소개합니다.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-목표&#34;&gt;&#xD;&#xA;  🎯 목표&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#-%eb%aa%a9%ed%91%9c&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;수학과 과학의 개념을 &lt;strong&gt;쉽고 명확하게&lt;/strong&gt; 전달&lt;/li&gt;&#xA;&lt;li&gt;학습 과정에서 마주친 &lt;strong&gt;직접적인 질문과 풀이 공유&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;누구나 함께 배우고 성장할 수 있는 &lt;strong&gt;열린 공간&lt;/strong&gt; 만들기&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-운영자-소개&#34;&gt;&#xD;&#xA;  🙋‍♂️ 운영자 소개&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#-%ec%9a%b4%ec%98%81%ec%9e%90-%ec%86%8c%ea%b0%9c&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;이름: &lt;strong&gt;OOO&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;관심 분야: 순수수학, 이산수학, 고전역학, 과학철학&lt;/li&gt;&#xA;&lt;li&gt;사용하는 도구: LaTeX, Python (SymPy, NumPy), Markdown&lt;/li&gt;&#xA;&lt;li&gt;공부하면서 느낀 걸 글로 쓰는 걸 좋아합니다&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-함께-이야기해요&#34;&gt;&#xD;&#xA;  💬 함께 이야기해요&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#-%ed%95%a8%ea%bb%98-%ec%9d%b4%ec%95%bc%ea%b8%b0%ed%95%b4%ec%9a%94&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;이 블로그의 내용은 언제든지 피드백을 환영합니다.&lt;br&gt;&#xA;틀리거나 애매한 부분이 있다면 댓글이나 메일로 알려주세요.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
